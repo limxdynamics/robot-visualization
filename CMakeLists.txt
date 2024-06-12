@@ -71,6 +71,13 @@ elseif($ENV{ROS_VERSION} EQUAL 2)
     # Install the mrosbridger executable
     install(PROGRAMS  lib/humble/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
     install(PROGRAMS  lib/humble/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+  elseif($ENV{ROS_DISTRO} STREQUAL "iron")
+      install(DIRECTORY lib/iron/ DESTINATION ../)
+      install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
+  
+      # Install the mrosbridger executable
+      install(PROGRAMS  lib/iron/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/iron/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
   endif()
   ament_package()
 endif()
