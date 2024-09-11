@@ -1,5 +1,8 @@
 ﻿<launch>
-  <param name="robot_description" command="cat $(find robot_description)/pointfoot/urdf/robot.urdf"/>
+  <!-- Pass the ROBOT_TYPE environment variable to ROS parameters -->
+  <param name="robot_type" value="$(env ROBOT_TYPE)" />
+
+  <param name="robot_description" command="cat $(find robot_description)/pointfoot/$(env ROBOT_TYPE)/urdf/robot.urdf"/>
   <arg name="rvizconfig" default="$(find robot_visualization)/rviz/pointfoot.rviz" />
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(arg rvizconfig)" />
   <node pkg="robot_visualization" type="mrosbridger" name="robot_bridger_rviz_hw">

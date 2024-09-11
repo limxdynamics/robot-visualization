@@ -6,15 +6,23 @@ from launch_ros.actions import Node
 from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 import os
+import sys
 
 
 def generate_launch_description():
+    robot_type = os.getenv("ROBOT_TYPE")
+
+    # Check if the ROBOT_TYPE environment variable is set, otherwise exit with an error
+    if not robot_type:
+        print("Error: Please set the ROBOT_TYPE using 'export ROBOT_TYPE=<robot_type>'.")
+        sys.exit(1)
+
     # Robot ip address
     os.environ['MROS_AGENT_IP'] = '10.192.1.2'
 
     # Get URDF file path
     urdf_file = PathJoinSubstitution(
-        [FindPackageShare("robot_description"), "pointfoot/urdf", "robot.urdf"]
+        [FindPackageShare("robot_description"), "pointfoot/" + robot_type + "/urdf", "robot.urdf"]
     )
 
     rviz_config_file = get_package_share_directory('robot_visualization') + '/rviz/pointfoot.rviz'
