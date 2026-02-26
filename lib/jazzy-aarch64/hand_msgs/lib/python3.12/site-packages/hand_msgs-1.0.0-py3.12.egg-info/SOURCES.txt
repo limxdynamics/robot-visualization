@@ -1,0 +1,6 @@
+setup.py
+hand_msgs/__init__.py
+hand_msgs.egg-info/PKG-INFO
+hand_msgs.egg-info/SOURCES.txt
+hand_msgs.egg-info/dependency_links.txt
+hand_msgs.egg-info/top_level.txt

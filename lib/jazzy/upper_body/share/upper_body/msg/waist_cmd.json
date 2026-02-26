@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "upper_body/msg/waist_cmd",
+      "fields": [
+        {
+          "name": "waistCMD",
+          "type": {
+            "type_id": 58,
+            "capacity": 3,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "upper_body/msg/waist_cmd",
+      "hash_string": "RIHS01_ce1870dc42f7d572b0e81933b0e8f258710c8aea9ee337bed19698ba004e23a0"
+    }
+  ]
+}

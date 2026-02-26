@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "upper_body/msg/servoJ",
+      "fields": [
+        {
+          "name": "joints",
+          "type": {
+            "type_id": 154,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "upper_body/msg/servoJ",
+      "hash_string": "RIHS01_1fbcba5cf008784c28943179f8dfc176f38bfa4a6d6864c2c7d34f0168646b6c"
+    }
+  ]
+}

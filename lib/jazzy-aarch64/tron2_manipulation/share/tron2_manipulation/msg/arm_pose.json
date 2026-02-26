@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "tron2_manipulation/msg/arm_pose",
+      "fields": [
+        {
+          "name": "left_arm_pos",
+          "type": {
+            "type_id": 58,
+            "capacity": 7,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "right_arm_pos",
+          "type": {
+            "type_id": 58,
+            "capacity": 7,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "tron2_manipulation/msg/arm_pose",
+      "hash_string": "RIHS01_1e9a34e18cfce4cbf201aa6bdd3ad9b4ab8ee6d9db4bb3d9e9adf548cc6adb73"
+    }
+  ]
+}

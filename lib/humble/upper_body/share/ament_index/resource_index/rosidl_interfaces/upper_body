@@ -1,0 +1,8 @@
+msg/arm_servo.idl
+msg/arm_servo.msg
+msg/arm_status.idl
+msg/arm_status.msg
+msg/servoJ.idl
+msg/servoJ.msg
+msg/waist_cmd.idl
+msg/waist_cmd.msg

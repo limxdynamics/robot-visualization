@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/MultiArrayDimension.msg
+// generated code does not contain a copyright notice
+
+
+module std_msgs {
+  module msg {
+    struct MultiArrayDimension {
+      @verbatim (language="comment", text=
+        "label of given dimension")
+      string label;
+
+      @verbatim (language="comment", text=
+        "size of given dimension (in type units)")
+      uint32 size;
+
+      @verbatim (language="comment", text=
+        "stride of given dimension")
+      uint32 stride;
+    };
+  };
+};

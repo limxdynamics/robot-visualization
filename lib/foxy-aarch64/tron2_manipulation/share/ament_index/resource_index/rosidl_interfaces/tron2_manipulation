@@ -1,0 +1,4 @@
+msg/arm_pose.idl
+msg/arm_pose.msg
+msg/arm_status.idl
+msg/arm_status.msg

@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/MultiArrayLayout.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/MultiArrayDimension.idl"
+
+module std_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      " The multiarray declares a generic multi-dimensional array of a" "\n"
+      " particular data type.  Dimensions are ordered from outer most" "\n"
+      " to inner most.")
+    struct MultiArrayLayout {
+      @verbatim (language="comment", text=
+        " Array of dimension properties")
+      sequence<std_msgs::msg::MultiArrayDimension> dim;
+
+      @verbatim (language="comment", text=
+        " padding elements at front of data")
+      uint32 data_offset;
+    };
+  };
+};

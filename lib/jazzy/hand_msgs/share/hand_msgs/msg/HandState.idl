@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from hand_msgs/msg/HandState.msg
+// generated code does not contain a copyright notice
+
+#include "hand_msgs/msg/HandMsg.idl"
+#include "std_msgs/msg/Header.idl"
+
+module hand_msgs {
+  module msg {
+    typedef uint8 uint8__2[2];
+    typedef hand_msgs::msg::HandMsg hand_msgs__msg__HandMsg;
+    typedef hand_msgs__msg__HandMsg hand_msgs__msg__HandMsg__2[2];
+    struct HandState {
+      std_msgs::msg::Header header;
+
+      string hand_type;
+
+      uint8__2 ctrl_mode;
+
+      hand_msgs__msg__HandMsg__2 hand_state;
+    };
+  };
+};

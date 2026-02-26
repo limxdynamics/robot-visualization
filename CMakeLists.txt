@@ -58,26 +58,67 @@ if($ENV{ROS_VERSION} EQUAL 1)
 elseif($ENV{ROS_VERSION} EQUAL 2)
   find_package(ament_cmake REQUIRED)
   if($ENV{ROS_DISTRO} STREQUAL "foxy")
-    install(DIRECTORY lib/foxy/ DESTINATION ../)
-    install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
-
-    # Install the mrosbridger executable
-    install(PROGRAMS  lib/foxy/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
-    install(PROGRAMS  lib/foxy/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
-  elseif($ENV{ROS_DISTRO} STREQUAL "humble")
-    install(DIRECTORY lib/humble/ DESTINATION ../)
-    install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
-
-    # Install the mrosbridger executable
-    install(PROGRAMS  lib/humble/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
-    install(PROGRAMS  lib/humble/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
-  elseif($ENV{ROS_DISTRO} STREQUAL "iron")
-      install(DIRECTORY lib/iron/ DESTINATION ../)
+    if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64")
+      message("ROS2 foxy detected x86_64.")
+      install(DIRECTORY lib/foxy/ DESTINATION ../)
       install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
-  
+
       # Install the mrosbridger executable
-      install(PROGRAMS  lib/iron/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
-      install(PROGRAMS  lib/iron/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+      install(PROGRAMS  lib/foxy/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/foxy/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+    elseif (${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+      message("ROS2 foxy detected aarch64.")
+      install(DIRECTORY lib/foxy-aarch64/ DESTINATION ../)
+      install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
+
+      # Install the mrosbridger executable
+      install(PROGRAMS  lib/foxy-aarch64/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/foxy-aarch64/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+    else()
+      message(FATAL_ERROR "ROS2 foxy detected, unsupported architecture!")
+    endif()
+  elseif($ENV{ROS_DISTRO} STREQUAL "humble")
+    if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64")
+      message("ROS2 humble detected x86_64.")
+      install(DIRECTORY lib/humble/ DESTINATION ../)
+      install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
+
+      # Install the mrosbridger executable
+      install(PROGRAMS  lib/humble/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/humble/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+    elseif (${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+      message("ROS2 humble detected aarch64.")
+      install(DIRECTORY lib/humble-aarch64/ DESTINATION ../)
+      install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
+
+      # Install the mrosbridger executable
+      install(PROGRAMS  lib/humble-aarch64/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/humble-aarch64/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+    else()
+      message(FATAL_ERROR "ROS2 humble detected, unsupported architecture!")
+    endif()
+  elseif($ENV{ROS_DISTRO} STREQUAL "jazzy")
+    if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64")
+      message("ROS2 jazzy detected x86_64.")
+      install(DIRECTORY lib/jazzy/ DESTINATION ../)
+      install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
+
+      # Install the mrosbridger executable
+      install(PROGRAMS  lib/jazzy/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/jazzy/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+    elseif (${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+      message("ROS2 jazzy detected aarch64.")
+      install(DIRECTORY lib/jazzy-aarch64/ DESTINATION ../)
+      install(DIRECTORY ros2/launch ros2/rviz DESTINATION share/${PROJECT_NAME})
+
+      # Install the mrosbridger executable
+      install(PROGRAMS  lib/jazzy-aarch64/mrosbridger/lib/mrosbridger/mrosbridger DESTINATION ../mrosbridger/lib/mrosbridger)
+      install(PROGRAMS  lib/jazzy-aarch64/mrosbridger/bin/mrosbridger DESTINATION ../mrosbridger/bin)
+    else()
+      message(FATAL_ERROR "ROS2 jazzy detected, unsupported architecture!")
+    endif()
+  else()
+    message(FATAL_ERROR "ROS_DISTRO environment variable is not defined.")
   endif()
   ament_package()
 endif()

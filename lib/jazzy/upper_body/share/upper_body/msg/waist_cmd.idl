@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from upper_body/msg/waist_cmd.msg
+// generated code does not contain a copyright notice
+
+
+module upper_body {
+  module msg {
+    typedef float float__3[3];
+    struct waist_cmd {
+      @verbatim (language="comment", text=
+        "[\"waist_yaw_joint\", \"waist_roll_joint\", \"waist_pitch_joint\"] units: rad")
+      float__3 waistCMD;
+    };
+  };
+};

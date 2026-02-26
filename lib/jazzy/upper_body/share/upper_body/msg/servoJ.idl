@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from upper_body/msg/servoJ.msg
+// generated code does not contain a copyright notice
+
+
+module upper_body {
+  module msg {
+    struct servoJ {
+      @verbatim (language="comment", text=
+        "unit: rad")
+      sequence<float> joints;
+    };
+  };
+};

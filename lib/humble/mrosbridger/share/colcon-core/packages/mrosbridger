@@ -1,1 +1,1 @@
-builtin_interfaces:controller_msgs:pkg-config:python3-yaml:rclcpp:rcutils:std_msgs:tf2_msgs
+builtin_interfaces:controller_msgs:hand_msgs:pkg-config:python3-yaml:rclcpp:rcutils:std_msgs:tf2_msgs:tron2_manipulation:upper_body

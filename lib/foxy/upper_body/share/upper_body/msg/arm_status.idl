@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from upper_body/msg/arm_status.msg
+// generated code does not contain a copyright notice
+
+
+module upper_body {
+  module msg {
+    typedef float float__7[7];
+    struct arm_status {
+      @verbatim (language="comment", text=
+        " unit: m")
+      @unit (value="px py pz Qx Qy Qz Qw")
+      float__7 left_arm_pos;
+
+      @verbatim (language="comment", text=
+        " unit: m")
+      @unit (value="px py pz Qx Qy Qz Qw")
+      float__7 right_arm_pos;
+    };
+  };
+};

@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "tron2_manipulation/msg/arm_status",
+      "fields": [
+        {
+          "name": "left_arm_pos",
+          "type": {
+            "type_id": 58,
+            "capacity": 7,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "right_arm_pos",
+          "type": {
+            "type_id": 58,
+            "capacity": 7,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "tron2_manipulation/msg/arm_status",
+      "hash_string": "RIHS01_ec27ea44402af232ccfc2cf805717be7fc814bc4c0150109f95ca4c846cf454b"
+    }
+  ]
+}

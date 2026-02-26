@@ -1,0 +1,6 @@
+msg/HandCmd.idl
+msg/HandCmd.msg
+msg/HandMsg.idl
+msg/HandMsg.msg
+msg/HandState.idl
+msg/HandState.msg

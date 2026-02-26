@@ -1,0 +1,4 @@
+source;share/tron2_manipulation/environment/ament_prefix_path.sh
+source;share/tron2_manipulation/environment/library_path.sh
+source;share/tron2_manipulation/environment/path.sh
+source;share/tron2_manipulation/environment/pythonpath.sh

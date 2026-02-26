@@ -1,4 +1,4 @@
 lib/jazzy/mrosbridger/bin/mrosbridger filter=lfs diff=lfs merge=lfs -text
-lib/jazzy/mrosbridger/lib/mrosbridger filter=lfs diff=lfs merge=lfs -text
+lib/jazzy/mrosbridger/lib/mrosbridger/mrosbridger filter=lfs diff=lfs merge=lfs -text
 lib/jazzy-aarch64/mrosbridger/bin/mrosbridger filter=lfs diff=lfs merge=lfs -text
-lib/jazzy-aarch64/mrosbridger/lib/mrosbridger filter=lfs diff=lfs merge=lfs -text
+lib/jazzy-aarch64/mrosbridger/lib/mrosbridger/mrosbridger filter=lfs diff=lfs merge=lfs -text
