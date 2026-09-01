@@ -1,0 +1,9 @@
+LimX Dynamics
+Copyright (c) 2026 LimX Dynamics. All Rights Reserved.
+
+This repository redistributes a complete ROS 2 Foxy installation under the
+directory lib/foxy-aarch64/. It contains numerous third-party ROS 2 packages,
+each distributed under its own license terms (Apache-2.0, BSD-2/3-Clause, MIT,
+and others). The applicable license texts are preserved alongside each package
+within lib/foxy-aarch64/. Refer to the respective package LICENSE files for the
+exact terms governing each component.
