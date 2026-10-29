@@ -40,10 +40,10 @@ PlotJuggler 配置，支持 ROS 1 / ROS 2，真机与本地仿真都能用。
 | `pointfoot_rviz_hw.launch` | 点足 | RViz | `10.192.1.2` | `/tf` `/tf_static` `/odom` `/VisualizeStatePointFoot` |
 | `pointfoot_plot_hw.launch` | 点足 | PlotJuggler | `10.192.1.2` | `/ImuData` `/RobotCmdPointFoot` `/RobotStatePointFoot` |
 | `pointfoot_plot_sim.launch` | 点足 | PlotJuggler | *（空）* | `/ImuData` `/RobotCmdPointFoot` `/RobotStatePointFoot` |
-| `wheellegged_rviz_hw.launch` | 轮足 | RViz | `192.168.1.2` | `/tf` `/tf_static` `/odom` |
-| `wheellegged_plot_hw.launch` | 轮足 | PlotJuggler | `192.168.1.2` | `/ImuData` `/RobotCmdWheel` `/RobotStateWheel` |
+| `wheellegged_rviz_hw.launch` | 轮足 | RViz | `10.192.1.2` | `/tf` `/tf_static` `/odom` |
+| `wheellegged_plot_hw.launch` | 轮足 | PlotJuggler | `10.192.1.2` | `/ImuData` `/RobotCmdWheel` `/RobotStateWheel` |
 | `wheellegged_plot_sim.launch` | 轮足 | PlotJuggler | *（空）* | `/ImuData` `/RobotCmdWheel` `/RobotStateWheel` |
-| `rosbridger.launch` | — | 仅启动桥 | `192.168.1.2` | `/tf` `/tf_static` `/odom` |
+| `rosbridger.launch` | — | 仅启动桥 | `10.192.1.2` | `/tf` `/tf_static` `/odom` |
 
 两个点足 `*_plot_*` 会把 `layout/pointfoot.xml` 载入 PlotJuggler，轮足那一对载入
 `layout/wheellegged.xml`。
@@ -150,8 +150,8 @@ ROS 2 那几套是完整的运行时安装，`colcon build` 会把选中的那�
   拿到的是指针文件。
 - **RViz 打开了但看不到机器人。** 工作空间缺 `robot_description` 包，或 `ROBOT_TYPE`
   指向了 `pointfoot/` 下不存在的模型。
-- **连不上。** 检查 `MROS_AGENT_IP`：点足的 launch 默认 `10.192.1.2`，轮足的默认
-  `192.168.1.2`。
+- **连不上。** 所有连真机的 launch 默认都是 `MROS_AGENT_IP=10.192.1.2`，这也是 SDK 示例里
+  用的地址。机器人不在这个网段时，改 launch 里的 `<env>` 那一行。
 - **ROS 2 的 PlotJuggler 窗口是空的。** ROS 2 没有附带布局文件，需要手动把话题拖进窗口。
 
 ## 相关仓库

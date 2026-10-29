@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <description>The robot_visualization package</description>
   <maintainer email="limx@limxdynamics.com">limxdynamics</maintainer>
-  <license>TODO</license>
+  <license>Apache-2.0</license>
   <buildtool_depend    condition="$ROS_VERSION == 1">catkin</buildtool_depend>
   <build_depend        condition="$ROS_VERSION == 1">roscpp</build_depend>
   <build_export_depend condition="$ROS_VERSION == 1">roscpp</build_export_depend>

@@ -48,10 +48,10 @@ topics cross, which agent it connects to, and which tool it opens.
 | `pointfoot_rviz_hw.launch` | point&#8209;foot | RViz | `10.192.1.2` | `/tf` `/tf_static` `/odom` `/VisualizeStatePointFoot` |
 | `pointfoot_plot_hw.launch` | point&#8209;foot | PlotJuggler | `10.192.1.2` | `/ImuData` `/RobotCmdPointFoot` `/RobotStatePointFoot` |
 | `pointfoot_plot_sim.launch` | point&#8209;foot | PlotJuggler | *(empty)* | `/ImuData` `/RobotCmdPointFoot` `/RobotStatePointFoot` |
-| `wheellegged_rviz_hw.launch` | wheel&#8209;legged | RViz | `192.168.1.2` | `/tf` `/tf_static` `/odom` |
-| `wheellegged_plot_hw.launch` | wheel&#8209;legged | PlotJuggler | `192.168.1.2` | `/ImuData` `/RobotCmdWheel` `/RobotStateWheel` |
+| `wheellegged_rviz_hw.launch` | wheel&#8209;legged | RViz | `10.192.1.2` | `/tf` `/tf_static` `/odom` |
+| `wheellegged_plot_hw.launch` | wheel&#8209;legged | PlotJuggler | `10.192.1.2` | `/ImuData` `/RobotCmdWheel` `/RobotStateWheel` |
 | `wheellegged_plot_sim.launch` | wheel&#8209;legged | PlotJuggler | *(empty)* | `/ImuData` `/RobotCmdWheel` `/RobotStateWheel` |
-| `rosbridger.launch` | — | bridge only | `192.168.1.2` | `/tf` `/tf_static` `/odom` |
+| `rosbridger.launch` | — | bridge only | `10.192.1.2` | `/tf` `/tf_static` `/odom` |
 
 The two `*_plot_*` point-foot launches load `layout/pointfoot.xml` into
 PlotJuggler; the wheel-legged pair loads `layout/wheellegged.xml`.
@@ -165,8 +165,9 @@ files and the bridge will not start.
 - **RViz opens but no robot appears.** `robot_description` is missing from the
   workspace, or `ROBOT_TYPE` points at a model that does not exist under
   `pointfoot/`.
-- **Nothing connects.** Check `MROS_AGENT_IP`: the point-foot launches default to
-  `10.192.1.2`, the wheel-legged ones to `192.168.1.2`.
+- **Nothing connects.** Every hardware launch defaults to
+  `MROS_AGENT_IP=10.192.1.2`, the address the SDK uses in its own examples. If the
+  robot sits on another subnet, edit the `<env>` line in the launch file.
 - **ROS 2 PlotJuggler window is empty.** No layout ships for ROS 2; drag the
   topics in manually.
 
