@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="doc/banner-zh.png" alt="robot-visualization：在 RViz 里看到机器人的三维姿态，在 PlotJuggler 里看到关节、IMU 与里程计曲线" width="100%">
+  <img src="doc/banner-zh.png" alt="robot-visualization：TRON1 的数据经 mrosbridger 送到 RViz 显示带 TF 坐标系的三维模型，送到 PlotJuggler 显示关节、IMU 和力矩曲线" width="100%">
 </p>
 
 <p align="center">
@@ -60,13 +60,14 @@ PlotJuggler 配置，支持 ROS 1 / ROS 2，真机与本地仿真都能用。
 ROS 2 目前只有点足：没有轮足的 launch、没有轮足的 RViz 配置，也没有 PlotJuggler 布局
 （ROS 2 下窗口是空的，曲线要自己拖）。
 
-> 这里的 "pointfoot" 指 SF（足板）系列，"wheellegged" 指 WF（轮足）系列——文件名沿用了
-> 本仓库既有 launch 的命名。
+> "pointfoot" 对应 `robot_description` 里 `pointfoot/` 目录下的 TRON1 型号（PF、SF、WF 都在其中，
+> 例如 `PF_TRON1A`、`SF_TRON1A`、`WF_TRON1A`）；"wheellegged" 对应 `wheellegged/` 目录下的
+> `WL_P311D`、`WL_P311E`。
 
 ## 数据怎么流动
 
 <p align="center">
-  <img src="doc/dataflow-zh.png" alt="机器人或本地仿真把数据送进 mrosbridger，桥按固定白名单转发给 RViz 与 PlotJuggler；RViz 还需要 robot_description 包提供模型" width="100%">
+  <img src="doc/dataflow-zh.png" alt="10.192.1.2 上的 TRON1 真机或本机仿真把数据送进 mrosbridger；它把 /tf、/tf_static、/odom 和 robot_description 模型送给 RViz，把 /ImuData、/RobotStatePointFoot、/RobotCmdPointFoot 送给 PlotJuggler" width="100%">
 </p>
 
 桥只转发 `mros2ros_include` 里列出的话题。这是它开销小的原因，也是加传感器时要去改参数、

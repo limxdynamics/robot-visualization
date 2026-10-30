@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="doc/banner.png" alt="robot-visualization: robot joints, IMU and odometry shown in an RViz 3D view and as traces in PlotJuggler" width="100%">
+  <img src="doc/banner.png" alt="robot-visualization: a TRON1 feeds mrosbridger, which shows it as a 3D model with TF frames in RViz and as joint, IMU and torque curves in PlotJuggler" width="100%">
 </p>
 
 <p align="center">
@@ -69,14 +69,14 @@ ROS 2 currently ships point-foot only: there is no wheel-legged launch, no
 wheel-legged RViz config, and no PlotJuggler layout (the ROS 2 window opens
 empty and you pick the curves yourself).
 
-> "pointfoot" here covers the SF (sole-foot) robots and "wheellegged" covers the
-> WF (wheel-foot) robots — the file names follow the launch-file naming used in
-> this repository.
+> "pointfoot" means the TRON1 models under `pointfoot/` in `robot_description` —
+> PF, SF and WF all live there (`PF_TRON1A`, `SF_TRON1A`, `WF_TRON1A`, …);
+> "wheellegged" means the models under `wheellegged/` (`WL_P311D`, `WL_P311E`).
 
 ## How the data flows
 
 <p align="center">
-  <img src="doc/dataflow-en.png" alt="Robot or local simulator feeds mrosbridger, which forwards a fixed topic allowlist to RViz and PlotJuggler; RViz also needs the robot_description package" width="100%">
+  <img src="doc/dataflow-en.png" alt="TRON1 robot at 10.192.1.2 or a local simulator feeds mrosbridger; it forwards /tf, /tf_static and /odom to RViz together with the robot_description URDF, and /ImuData, /RobotStatePointFoot and /RobotCmdPointFoot to PlotJuggler" width="100%">
 </p>
 
 The bridge forwards only what `mros2ros_include` lists. That is why it stays
