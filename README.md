@@ -6,16 +6,12 @@
   <b>English</b> | <a href="README_cn.md">中文</a>
 </p>
 
-<!-- limx-community:start -->
-<!-- Managed by limxdynamics/limxdynamics/.github/community/sync_community.py; QR code: doc/wechat_qr.png in that repo -->
-<p align="center"><a href="https://github.com/limxdynamics/limxdynamics/blob/main/doc/wechat_qr.png"><img src="https://img.shields.io/badge/Join%20Our%20WeChat%20Community-All%20Projects%20Welcome-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat Community"></a></p>
-<!-- limx-community:end -->
-
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-2f6feb" alt="License: Apache-2.0"></a>
   <img src="https://img.shields.io/badge/ROS%201-Noetic%20%7C%20Melodic-22314E" alt="ROS 1 Noetic / Melodic">
   <img src="https://img.shields.io/badge/ROS%202-Foxy%20%7C%20Humble%20%7C%20Jazzy-22314E" alt="ROS 2 Foxy / Humble / Jazzy">
   <img src="https://img.shields.io/badge/arch-x86__64%20%7C%20aarch64-6e7681" alt="x86_64 and aarch64">
+  <a href="https://github.com/limxdynamics/limxdynamics/blob/main/doc/wechat_qr.png"><img src="https://img.shields.io/badge/WeChat-Developer%20Community-07C160?logo=wechat&logoColor=white" alt="WeChat Community"></a>
 </p>
 
 # robot-visualization
